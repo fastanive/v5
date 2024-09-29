@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jam Digital Sederhana</title>
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #00bfff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        #jam {
+            background-color: #0f0f2e;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            font-size: 3em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jam Digital Sederhana</h1>
+    <div id="jam">19:22:55</div>
+    <h1>SEMANGAT NGODING DEKKKK</h1>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('jam').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Call it once at first to avoid delay
+    </script>
+</body>
+</html>
